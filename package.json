@@ -6,6 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "bin": {
+    "done-serve": "./bin/done-serve"
+  },
   "scripts": {
     "copy": "node scripts/copy.js",
     "test": "npm run copy && npm run mocha",
@@ -25,6 +28,7 @@
   },
   "homepage": "https://github.com/donejs/done-serve#readme",
   "dependencies": {
+    "commander": "^2.8.1",
     "compression": "^1.6.1",
     "done-ssr-middleware": "^0.1.0",
     "express": "^4.13.4",
