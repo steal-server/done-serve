@@ -32,7 +32,8 @@
     "compression": "^1.6.1",
     "done-ssr-middleware": "^0.1.0",
     "express": "^4.13.4",
-    "http-proxy": "^1.13.2"
+    "http-proxy": "^1.13.2",
+    "infanticide": "^1.0.1"
   },
   "devDependencies": {
     "can": "^2.3.20",
