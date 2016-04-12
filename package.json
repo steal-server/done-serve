@@ -30,7 +30,7 @@
   "dependencies": {
     "commander": "^2.8.1",
     "compression": "^1.6.1",
-    "done-ssr-middleware": "^0.1.0",
+    "done-ssr-middleware": "0.2.0-pre.0",
     "express": "^4.13.4",
     "http-proxy": "^1.13.2",
     "infanticide": "^1.0.1"
@@ -43,7 +43,8 @@
     "request": "^2.69.0",
     "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5",
-    "spawn-mochas": "^1.0.0",
-    "steal-tools": "^0.15.0"
+    "spawn-mochas": "^1.1.0",
+    "steal-tools": "^0.15.0",
+    "testdouble": "^1.4.1"
   }
 }

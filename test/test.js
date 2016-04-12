@@ -1,11 +1,9 @@
 var mochas = require("spawn-mochas");
 
-var tests = [
+mochas([
+	"cli_test.js",
 	"server_test.js",
 	"cookie_server_test.js",
-	"can-serve_test.js"
-].map(function(pth){
-	return __dirname + "/" + pth;
-});
-
-mochas(tests);
+	"can-serve_test.js",
+	"timeout_test.js"
+], __dirname);
