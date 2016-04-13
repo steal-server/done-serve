@@ -8,6 +8,13 @@ A simple development server for DoneJS projects.
 - [Install](#install)
 - [Usage](#usage)
 - [Options](#options)
+  - <code>[-p, --port](#-p---port)</code>
+  - <code>[-r, --proxy](#-r---proxy)</code>
+  - <code>[-t, --proxy-to](#-t---proxy-to)</code>
+  - <code>[--proxy-no-cert-check](#--proxy-no-cert-check)</code>
+  - <code>[-d, --develop](#-d---develop)</code>
+  - <code>[--timeout](#--timeout)</code>
+  - <code>[--debug](#--debug)</code>
 
 ## Install
 
