@@ -5,6 +5,17 @@
 
 A simple development server for DoneJS projects.
 
+- [Install](#install)
+- [Usage](#usage)
+- [Options](#options)
+  - <code>[-p, --port](#-p---port)</code>
+  - <code>[-r, --proxy](#-r---proxy)</code>
+  - <code>[-t, --proxy-to](#-t---proxy-to)</code>
+  - <code>[--proxy-no-cert-check](#--proxy-no-cert-check)</code>
+  - <code>[-d, --develop](#-d---develop)</code>
+  - <code>[--timeout](#--timeout)</code>
+  - <code>[--debug](#--debug)</code>
+
 ## Install
 
 ```
@@ -21,15 +32,42 @@ node_modules/.bin/done-serve --port 3030
 
 In your application folder.
 
-Available options:
+## Options
 
-- __-p, --port__ - Set the port the server should run on
-- __-d, --develop__ - Also starts a live-reload server
-- __-r, --proxy__ <url> - Proxy a local path (default: `/api`) to the given URL (e.g. `http://api.myapp.com`)
-- __-t, --proxy-to <path>__ - Set the proxy endpoint (default: `/api`)
-- __--proxy-no-cert-check__ - Turn off SSL certificate verification
+The following options can be specified from the command line:
 
-### In Node
+### -p, --port
+
+Specify the **port** the server should run on. If unspecified this port will be one of:
+
+* the `PORT` environment variable
+* `3030`
+
+### -r, --proxy
+
+Proxy a local path (default: `/api`) to the given URL (e.g. `http://api.myapp.com`).
+
+### -t, --proxy-to
+
+Set the proxy endpoint (default: `/api`).
+
+### --proxy-no-cert-check
+
+Turn off SSL certificate verification.
+
+### -d, --develop
+
+Start a [live-reload](http://stealjs.com/docs/steal.live-reload.html) server so any code changes will be reflected immediately.
+
+### --timeout
+
+Specify a timeout for server rendering. If the timeout is exceeded the server will return whatever has been rendered up until that point. (default: `5000`)
+
+### --debug
+
+Enable debug information in case of a timeout. The debug information will be appended to the document as a modal window and provides stack traces. Only use this flag during development.
+
+## Usage in Node
 
 You can also use the server, with the same options, from JavaScript:
 
