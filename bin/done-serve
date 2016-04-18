@@ -5,8 +5,4 @@ var cli = require("../lib/cli");
 var program = cli.program;
 program.parse(process.argv);
 
-if(!program.args.length) {
-	program.help();
-} else {
-	cli.run(program);
-}
+cli.run(program);
