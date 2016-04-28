@@ -68,6 +68,12 @@ describe("done-serve cli", function(){
 
 			cli.run();
 		});
+		
+		it("Sets the NODE_ENV to development", function() {
+			cli.program.parse(node(["--develop"]));			
+			cli.run();
+			assert(process.env.NODE_ENV === "development");
+		});
 
 		it("Can pass in the live reload port", function(){
 			cli.program.parse(node([
