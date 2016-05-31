@@ -30,15 +30,20 @@
   "dependencies": {
     "commander": "^2.8.1",
     "compression": "^1.6.1",
-    "done-ssr-middleware": "^0.3.0",
+    "done-ssr-middleware": "^0.4.0-pre",
     "express": "^4.13.4",
     "http-proxy": "^1.13.2",
     "infanticide": "^1.0.1"
   },
   "devDependencies": {
-    "can": "^2.3.20",
+    "can-component": "^3.0.0-pre.9",
+    "can-list": "^3.0.0-pre.3",
+    "can-map": "^3.0.0-pre.5",
+    "can-map-define": "^3.0.0-pre.2",
+    "can-route": "^3.0.0-pre.5",
+    "can-route-pushstate": "^3.0.0-pre.4",
     "copy-dir": "0.0.8",
-    "done-autorender": "^0.7.1",
+    "done-autorender": "^0.9.0-pre.0",
     "jquery": "^2.2.3",
     "nock": "^7.2.2",
     "request": "^2.69.0",
