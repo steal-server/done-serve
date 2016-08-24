@@ -60,6 +60,10 @@ Turn off SSL certificate verification.
 
 Start a [live-reload](http://stealjs.com/docs/steal.live-reload.html) server so any code changes will be reflected immediately.
 
+### -s, --static
+
+Only serve static files, do not perform server-side rendering. Notably this is useful when debugging an issue in the app.
+
 ### --timeout
 
 Specify a timeout for server rendering. If the timeout is exceeded the server will return whatever has been rendered up until that point. (default: `5000`)
