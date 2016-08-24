@@ -13,6 +13,7 @@ A simple development server for DoneJS projects.
   - <code>[-t, --proxy-to](#-t---proxy-to)</code>
   - <code>[--proxy-no-cert-check](#--proxy-no-cert-check)</code>
   - <code>[-d, --develop](#-d---develop)</code>
+  - <code>[-s, --static](#-s--static)</code>
   - <code>[--timeout](#--timeout)</code>
   - <code>[--debug](#--debug)</code>
 
