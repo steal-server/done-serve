@@ -47,6 +47,14 @@ describe("done-serve cli", function(){
 		});
 	});
 
+	describe("auth-cookie", function(){
+		it("Receives the cookie name", function(){
+			cli.program.parse(node(["--auth-cookie", "feathers-jwt"]));
+			serverExpects({ authCookie: 'feathers-jwt' });
+			cli.run();
+		});
+	});
+
 	describe("--develop", function(){
 		it("Launches a steal-tools process", function(){
 			cli.program.parse(node(["--develop"]));
