@@ -50,7 +50,26 @@ describe("done-serve cli", function(){
 	describe("auth-cookie", function(){
 		it("Receives the cookie name", function(){
 			cli.program.parse(node(["--auth-cookie", "feathers-jwt"]));
-			serverExpects({ authCookie: 'feathers-jwt' });
+			serverExpects({
+				auth: {
+					cookie: 'feathers-jwt'
+				}
+			});
+			cli.run();
+		});
+	});
+
+	describe("auth-domains", function(){
+		it("Receives the auth domains", function(){
+			cli.program.parse(node(["--auth-domains", "canjs.com,bitovi.com"]));
+			serverExpects({
+				auth: {
+					domains: [
+						'canjs.com',
+						'bitovi.com'
+					]
+				}
+			});
 			cli.run();
 		});
 	});
