@@ -64,6 +64,14 @@ Start a [live-reload](http://stealjs.com/docs/steal.live-reload.html) server so 
 
 Only serve static files, do not perform server-side rendering. Notably this is useful when debugging an issue in the app.
 
+### --auth-cookie
+
+Specifies the name of a cookie that [done-ssr](https://github.com/donejs/done-ssr#options) will use to enable JavaScript Web Token (JWT) auth.
+
+### --auth-domains
+
+A comma-separated string of domain names that are authorized to receive the JWT token.  Required if `--auth-cookie` is used.
+
 ### --timeout
 
 Specify a timeout for server rendering. If the timeout is exceeded the server will return whatever has been rendered up until that point. (default: `5000`)
