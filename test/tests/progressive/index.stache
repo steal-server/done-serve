@@ -3,7 +3,7 @@
 		<title>test page</title>
 	</head>
 	<body>
-		<can-import from="./progressive/routes"/>
+		<can-import from="progressive/routes"/>
 		<can-import from="progressive/appstate" as="viewModel" />
 		<can-import from="progressive/main.css!"/>
 

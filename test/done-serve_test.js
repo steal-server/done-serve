@@ -2,7 +2,7 @@ var assert = require("assert");
 var path = require("path");
 var spawn = require("child_process").spawn;
 
-describe("done-serve cli tests", function(){
+describe("done-serve done-serve", function(){
 	this.timeout(30000);
 
 	var isWin = /^win/.test(process.platform);
@@ -10,7 +10,7 @@ describe("done-serve cli tests", function(){
 		return p + (isWin ? ".cmd" : "");
 	};
 
-	var canServeBin = platformExt(path.join(__dirname, "..", "bin", "done-serve"));
+	var doneServeBin = platformExt(path.join(__dirname, "..", "bin", "done-serve"));
 	var stealToolsBin = platformExt(path.join(__dirname, "..", "node_modules",
 								  ".bin", "steal-tools"));
 
@@ -25,7 +25,7 @@ describe("done-serve cli tests", function(){
 		});
 
 		it("starts up web and live-reload servers", function(done){
-			var child = spawn(canServeBin, [
+			var child = spawn(doneServeBin, [
 				"--develop",
 				"--steal-tools-path",
 				stealToolsBin,
@@ -47,12 +47,14 @@ describe("done-serve cli tests", function(){
 				if(/done-serve starting/.test(msg)) {
 					assert(true, "web server started");
 					partsStarted++;
-				}
-				if(/Live-reload server/.test(msg)) {
+				} else if(/Live-reload server/.test(msg)) {
 					assert(true, "live-reload started");
 					assert(/port 8011/.test(msg), "correct port");
 					partsStarted++;
+				} else {
+					console.log(msg);
 				}
+
 				if(partsStarted === 2) {
 					child.kill();
 				}

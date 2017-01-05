@@ -5,8 +5,7 @@ var nock = require( "nock" );
 
 var serve = require('../lib/index');
 
-
-describe("cookie async rendering", function() {
+describe("done-serve cookie_server", function() {
 	this.timeout(10000);
 
 	var scope;

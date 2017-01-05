@@ -3,20 +3,24 @@
   "version": "0.0.1",
   "main": "progressive/index.stache!done-autorender",
   "dependencies": {
-    "can-component": "^3.0.0-pre.9",
-    "can-list": "^3.0.0-pre.3",
-    "can-map": "^3.0.0-pre.5",
-    "can-map-define": "^3.0.0-pre.2",
-    "can-route": "^3.0.0-pre.5",
-    "can-route-pushstate": "^3.0.0-pre.4",
-    "done-autorender": "^0.9.0-pre.0"
+    "can-component": "^3.0.4",
+    "can-list": "^3.0.2",
+    "can-map": "^3.0.4",
+    "can-map-define": "^3.0.2",
+    "can-route": "^3.0.6",
+    "can-route-pushstate": "^3.0.1",
+    "done-autorender": "^1.0.0-alpha.0",
+    "steal-css": "^1.1.1"
   },
-  "system": {
+  "steal": {
     "envs": {
       "someenv": {
 		"renderingBaseURL": "http://example.com/",
 		"FOO": "bar"
       }
-    }
+    },
+	"plugins": [
+		"steal-css"
+	]
   }
 }
