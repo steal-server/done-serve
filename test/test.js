@@ -5,6 +5,6 @@ mochas([
 	"server_test.js",
 	"server_path_test.js",
 	"cookie_server_test.js",
-	"can-serve_test.js",
+	"done-serve_test.js",
 	"timeout_test.js"
 ], __dirname);

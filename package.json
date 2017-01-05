@@ -11,7 +11,8 @@
   },
   "scripts": {
     "copy": "node scripts/copy.js",
-    "test": "npm run copy && npm run mocha",
+    "jshint": "jshint lib/.  test/*.js --config",
+    "test": "npm run jshint && npm run copy && npm run mocha",
     "mocha": "node test/test.js"
   },
   "repository": {
@@ -30,27 +31,29 @@
   "dependencies": {
     "commander": "^2.8.1",
     "compression": "^1.6.1",
-    "done-ssr-middleware": "^0.4.0-pre",
+    "done-ssr-middleware": "^1.0.0-alpha.0",
     "express": "^4.13.4",
     "http-proxy": "^1.13.2",
     "infanticide": "^1.0.1"
   },
   "devDependencies": {
-    "can-component": "^3.0.0-pre.9",
-    "can-list": "^3.0.0-pre.3",
-    "can-map": "^3.0.0-pre.5",
-    "can-map-define": "^3.0.0-pre.2",
-    "can-route": "^3.0.0-pre.5",
-    "can-route-pushstate": "^3.0.0-pre.4",
+    "can-component": "^3.0.4",
+    "can-list": "^3.0.2",
+    "can-map": "^3.0.4",
+    "can-map-define": "^3.0.2",
+    "can-route": "^3.0.6",
+    "can-route-pushstate": "^3.0.1",
     "copy-dir": "0.0.8",
-    "done-autorender": "^0.9.0-pre.0",
-    "jquery": "^2.2.3",
+    "done-autorender": "^1.0.0-alpha.0",
+    "jquery": "2.x - 3.x",
+    "jshint": "^2.8.0",
     "nock": "^7.2.2",
     "request": "^2.69.0",
     "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5",
     "spawn-mochas": "^1.1.0",
-    "steal-tools": "^0.15.0",
+    "steal-css": "^1.1.1",
+    "steal-tools": "^1.0.1",
     "testdouble": "^1.4.1"
   }
 }

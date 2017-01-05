@@ -1,11 +1,10 @@
 var assert = require("assert");
 var path = require("path");
-var http = require("http");
 var request = require("request");
 
 var serve = require("../lib/index");
 
-describe("done-serve --timeout", function() {
+describe("done-serve timeout", function() {
 	this.timeout(10000);
 
 	var server;

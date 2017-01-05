@@ -7,7 +7,7 @@ var socketClient = require('socket.io-client');
 
 var serve = require('../lib/index');
 
-describe('done-serve tests', function() {
+describe('done-serve server_path', function() {
 	this.timeout(10000);
 
 	var server, other, io;
