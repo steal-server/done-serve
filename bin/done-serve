@@ -5,4 +5,4 @@ var cli = require("../lib/cli");
 var program = cli.program;
 program.parse(process.argv);
 
-cli.run(program);
+module.exports = cli.run(program);
