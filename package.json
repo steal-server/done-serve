@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/donejs/done-serve#readme",
   "dependencies": {
+    "blessed": "^0.1.81",
     "commander": "^2.8.1",
     "compression": "^1.6.1",
     "done-ssr-middleware": "^1.0.0-alpha.0",
