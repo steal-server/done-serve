@@ -26,17 +26,21 @@ npm install done-serve
 
 ## Usage
 
-To start a full server that hosts your application run:
-
 ```
-node_modules/.bin/done-serve --port 3030
+node_modules/.bin/done-serve [path] [options]
 ```
 
-In your application folder.
+`[path]` is the root directory. Defaults to the current working directory.
+
+To start a full server that hosts your application from the `./dist` directory on port `3030` run:
+
+```
+node_modules/.bin/done-serve dist --port 3030
+```
 
 ## Options
 
-The following options can be specified from the command line:
+The following `[options]` can be specified from the command line:
 
 ### -p, --port
 
