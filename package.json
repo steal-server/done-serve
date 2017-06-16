@@ -31,11 +31,12 @@
   "dependencies": {
     "commander": "^2.8.1",
     "compression": "^1.6.1",
-    "done-ssr-middleware": "^1.0.0",
     "debug": "^2.6.3",
+    "done-ssr-middleware": "^1.0.1",
     "express": "^4.13.4",
     "http-proxy": "^1.13.2",
-    "infanticide": "^1.0.1"
+    "infanticide": "^1.0.1",
+    "spdy": "^3.4.4"
   },
   "devDependencies": {
     "can-component": "^3.0.4",
@@ -56,6 +57,6 @@
     "spawn-mochas": "^1.1.0",
     "steal-css": "^1.1.1",
     "steal-tools": "^1.0.1",
-    "testdouble": "^1.4.1"
+    "testdouble": "^3.0.0"
   }
 }
