@@ -16,6 +16,7 @@ A simple development server for DoneJS projects.
   - <code>[--proxy-no-cert-check](#--proxy-no-cert-check)</code>
   - <code>[-d, --develop](#-d---develop)</code>
   - <code>[-s, --static](#-s--static)</code>
+  - <code>[--error-page](#--error-page)</code>
   - <code>[--timeout](#--timeout)</code>
   - <code>[--debug](#--debug)</code>
 
@@ -27,17 +28,21 @@ npm install done-serve
 
 ## Usage
 
-To start a full server that hosts your application run:
-
 ```
-node_modules/.bin/done-serve --port 3030
+node_modules/.bin/done-serve [path] [options]
 ```
 
-In your application folder.
+`[path]` is the root directory. Defaults to the current working directory.
+
+To start a full server that hosts your application from the `./dist` directory on port `3030` run:
+
+```
+node_modules/.bin/done-serve dist --port 3030
+```
 
 ## Options
 
-The following options can be specified from the command line:
+The following `[options]` can be specified from the command line:
 
 ### -p, --port
 
@@ -65,6 +70,10 @@ Start a [live-reload](http://stealjs.com/docs/steal.live-reload.html) server so 
 ### -s, --static
 
 Only serve static files, do not perform server-side rendering. Notably this is useful when debugging an issue in the app.
+
+### --error-page <filename>
+
+With the `--static` flag set, set an HTML page that should be sent instead of the normal error page. This is useful when you want to use Pushstate without server side rendering.
 
 ### --auth-cookie
 

@@ -113,4 +113,84 @@ describe('done-serve server', function() {
 			});
 		});
 	});
+
+	it('serves development.html when there\'s no index.html and NODE_ENV is not set', function(done) {
+		var server = serve({
+			path: path.join(__dirname, 'tests', 'pushstate'),
+			static: true
+		}).listen(8889);
+
+		server.on('listening', function() {
+			request('http://localhost:8889', function(err, res, body) {
+				assert(body === 'Development');
+				assert.ok(res.statusCode === 200);
+				server.close(done);
+			});
+		});
+	});
+
+	it('serves production.html when NODE_ENV is not development', function(done) {
+		process.env.NODE_ENV = 'ci';
+		var server = serve({
+			path: path.join(__dirname, 'tests', 'pushstate'),
+			static: true
+		}).listen(8889);
+
+		server.on('listening', function() {
+			request('http://localhost:8889', function(err, res, body) {
+				assert(body === 'Production');
+				assert.ok(res.statusCode === 200);
+				delete process.env.NODE_ENV;
+				server.close(done);
+			});
+		});
+	});
+
+	it('serves qa.html when NODE_ENV is qa', function(done) {
+		process.env.NODE_ENV = 'qa';
+		var server = serve({
+			path: path.join(__dirname, 'tests', 'pushstate'),
+			static: true
+		}).listen(8889);
+
+		server.on('listening', function() {
+			request('http://localhost:8889', function(err, res, body) {
+				assert(body === 'QA');
+				assert.ok(res.statusCode === 200);
+				delete process.env.NODE_ENV;
+				server.close(done);
+			});
+		});
+	});
+
+	it('serves development.html for a non-matched static route (pushstate route)', function(done) {
+		var server = serve({
+			path: path.join(__dirname, 'tests', 'pushstate'),
+			static: true
+		}).listen(8889);
+
+		server.on('listening', function() {
+			request('http://localhost:8889/users', function(err, res, body) {
+				assert(body === 'Development');
+				assert.ok(res.statusCode === 200);
+				server.close(done);
+			});
+		});
+	});
+
+	it('serves a custom error page in static mode', function(done) {
+		var server = serve({
+			path: path.join(__dirname),
+			static: true,
+			errorPage: path.join('test', 'tests', 'error-page.html')
+		}).listen(8891);
+
+		server.on('listening', function() {
+			request('http://localhost:8891/not-a-real-page', function(err, res, body) {
+				assert.ok(res.statusCode === 200);
+				assert.equal(body, 'This is the error page!');
+				server.close(done);
+			});
+		});
+	});
 });

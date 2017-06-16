@@ -20,6 +20,18 @@ function serverExpects(opts){
 }
 
 describe("done-serve cli", function(){
+	describe("path", function(){
+		it("Uses current directory when no path passed", function() {
+			cli.program.parse(node([]));
+			serverExpects({ path: process.cwd() });
+			cli.run();
+		});
+		it("Uses path joined with current directory when passed", function() {
+			cli.program.parse(node(["dist"]));
+			serverExpects({ path: path.join(process.cwd(), 'dist') });
+			cli.run();
+		});
+	});
 	describe("--timeout", function(){
 		it("Passes undefined when no option passed", function(){
 			cli.program.parse(node([]));
