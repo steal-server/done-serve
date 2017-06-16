@@ -19,6 +19,7 @@ A simple development server for DoneJS projects.
   - <code>[--debug](#--debug)</code>
   - <code>[--key](#--key)</code>
   - <code>[--cert](#--cert)</code>
+  - <code>[--strategy](#--strategy]</code>
 
 ## Install
 
@@ -98,6 +99,13 @@ Provide SSL key and certificate files. When providing these options both HTTP an
 ```shell
 done-serve --static --key ~/.localhost-ssl/private.pem --cert ~/.localhost-ssl/cert.pem
 ```
+
+### --strategy
+
+Provides which rendering strategy to use. By default done-ssr waits for all asynchronous tasks to complete before serializing HTML and returning that to the browser. The options are:
+
+* **safe**: The default strategy as described above.
+* **incremental**: This rendering strategy prioritizes returning HTML to the browser sooner. Along with the HTML a shim is sent that communicates with the server to receive rendering instructions. This allows a faster rendering experience in browsers that support HTTP2. This strategy will silently fall back to the **safe** strategy if HTTP2 is not supported. Using this option requires also providing **--key** and **--cert** flags, as HTTP2 requires SSL.
 
 ## Usage in Node
 

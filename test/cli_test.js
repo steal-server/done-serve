@@ -139,4 +139,15 @@ describe("done-serve cli", function(){
 			cli.run();
 		});
 	});
+
+	describe("strategy", function(){
+		it("Receives the strategy name", function(){
+			cli.program.parse(node(["--strategy", "safe"]));
+			serverExpects({
+				strategy: "safe"
+			});
+			cli.run();
+		});
+	});
+
 });
