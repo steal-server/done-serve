@@ -32,7 +32,7 @@
     "commander": "^2.8.1",
     "compression": "^1.6.1",
     "debug": "^2.6.3",
-    "done-ssr-middleware": "^1.0.1",
+    "done-ssr-middleware": "1.1.0-alpha.0",
     "express": "^4.13.4",
     "http-proxy": "^1.13.2",
     "infanticide": "^1.0.1",
