@@ -1,6 +1,7 @@
 var assert = require("assert");
 var path = require("path");
 var request = require("request");
+var isCI = require("is-ci");
 
 var serve = require("../lib/index");
 
@@ -10,13 +11,20 @@ describe("done-serve timeout", function() {
 	var server;
 
 	before(function(done) {
+		this.timeout(30000);
+
 		server = serve({
 			path: path.join(__dirname, 'tests'),
 			main: "timeout/index.stache!done-autorender",
 			timeout: 50
 		}).listen(5050);
 
-		server.on('listening', done);
+		server.on('listening', function(){
+			// Make an initial request so that steal is preloaded
+			request("http://localhost:5050/slow", function(err, res, body){
+				setTimeout(done, isCI ? 10000 : 1000);
+			});
+		});
 	});
 
 	after(function(done) {
