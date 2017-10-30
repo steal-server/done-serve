@@ -1,6 +1,7 @@
 var assert = require("assert");
 var path = require("path");
 var request = require("request");
+var isCI = require("is-ci");
 
 var serve = require("../lib/index");
 
@@ -21,7 +22,7 @@ describe("done-serve timeout", function() {
 		server.on('listening', function(){
 			// Make an initial request so that steal is preloaded
 			request("http://localhost:5050/slow", function(err, res, body){
-				setTimeout(done, 10000);
+				setTimeout(done, isCI ? 10000 : 1000);
 			});
 		});
 	});
