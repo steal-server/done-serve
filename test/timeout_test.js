@@ -16,7 +16,12 @@ describe("done-serve timeout", function() {
 			timeout: 50
 		}).listen(5050);
 
-		server.on('listening', done);
+		server.on('listening', function(){
+			// Make an initial request so that steal is preloaded
+			request("http://localhost:5050/slow", function(err, res, body){
+				setTimeout(done, 1000);
+			});
+		});
 	});
 
 	after(function(done) {
