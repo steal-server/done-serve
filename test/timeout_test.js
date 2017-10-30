@@ -10,6 +10,8 @@ describe("done-serve timeout", function() {
 	var server;
 
 	before(function(done) {
+		this.timeout(30000);
+
 		server = serve({
 			path: path.join(__dirname, 'tests'),
 			main: "timeout/index.stache!done-autorender",
@@ -19,7 +21,7 @@ describe("done-serve timeout", function() {
 		server.on('listening', function(){
 			// Make an initial request so that steal is preloaded
 			request("http://localhost:5050/slow", function(err, res, body){
-				setTimeout(done, 2000);
+				setTimeout(done, 10000);
 			});
 		});
 	});
